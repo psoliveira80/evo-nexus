@@ -13,15 +13,15 @@ services:
       - EVONEXUS_PORT=8080
     volumes:
       - ./stack.env:/workspace/.env:ro
-      - ./config:/workspace/config   # <-- o :ro impede a escrita
+      - ./config:/workspace/config   # <-- # tirei o :ro impede a escrita 
       - ./workspace:/workspace/workspace
       - ./dashboard/data:/workspace/dashboard/data
       - ./.claude/agents:/workspace/.claude/agents:ro
       - ./.claude/skills:/workspace/.claude/skills:ro
       - ./.claude/commands:/workspace/.claude/commands:ro
       - ./.claude/templates:/workspace/.claude/templates:ro
-      - ./memory:/workspace/memory:ro
-      - ./ADWs/logs:/workspace/ADWs/logs:ro
+      - ./memory:/workspace/memory # tirei o :ro
+      - ./ADWs/logs:/workspace/ADWs/logs # tirei o :ro
     networks:
       - network_public
     labels:
