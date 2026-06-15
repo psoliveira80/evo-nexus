@@ -23,10 +23,10 @@ services:
       - ./memory:/workspace/memory:ro
       - ./ADWs/logs:/workspace/ADWs/logs:ro
     networks:
-      - network-public
+      - network_public
     labels:
       - "traefik.enable=true"
-      - "traefik.docker.network=network-public"
+      - "traefik.docker.network=network_public"
       - "traefik.http.routers.evonexus.rule=Host(`evonexus.megaflow.work`)"
       - "traefik.http.routers.evonexus.entrypoints=websecure"
       - "traefik.http.routers.evonexus.tls=true"
@@ -89,7 +89,7 @@ services:
       - manual
 
 networks:
-  network-public:
+  network_public:
     external: true
 
 volumes:
