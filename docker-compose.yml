@@ -13,7 +13,7 @@ services:
       - EVONEXUS_PORT=8080
     volumes:
       - ./stack.env:/workspace/.env:ro
-      - ./config:/workspace/config:ro
+      - ./config:/workspace/config   # <-- o :ro impede a escrita
       - ./workspace:/workspace/workspace
       - ./dashboard/data:/workspace/dashboard/data
       - ./.claude/agents:/workspace/.claude/agents:ro
